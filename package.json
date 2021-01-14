@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "course-grader-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,13 +17,25 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "helmet": "^4.1.1",
-    "morgan": "^1.10.0"
+    "helmet": "^4.3.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.2.0",
-    "nodemon": "^2.0.6",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
     "supertest": "^5.0.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseguera/course-grader-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joseguera/course-grader-server/issues"
+  },
+  "homepage": "https://github.com/joseguera/course-grader-server#readme"
 }
