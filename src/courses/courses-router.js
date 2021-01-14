@@ -31,12 +31,14 @@ coursesRouter
             })
             .catch(next)
     })
-    .post(jsonParser, (req, res, next) => {
-        const { instructor_name, course_number, course_name, 
-                quarter, project_id, total } = req.body;
-        const newCourse = { instructor_name, course_number, 
+    .post(
+        // requireAuth, 
+jsonParser, (req, res, next) => {
+        const { instructor_name, program_area, course_number, course_name, 
+                quarter, project_id, notes, total } = req.body;
+        const newCourse = { instructor_name, program_area, course_number, 
                             course_name, quarter,
-                            project_id, total };
+                            project_id, notes, total };
         
         for (const [key, value] of Object.entries(newCourse)) {
             if (value == null) {
@@ -96,17 +98,17 @@ coursesRouter
     .patch(
         // requireAuth, 
         jsonParser, (req, res, next) => {
-        const { instructor_name, course_number, course_name, 
-                quarter, project_id, total } = req.body;
-        const courseToUpdate = { instructor_name, course_number, 
+        const { instructor_name, program_area, course_number, course_name, 
+                quarter, project_id, notes, total } = req.body;
+        const courseToUpdate = { instructor_name, program_area, course_number, 
                                 course_name, quarter,
-                                project_id, total  };
+                                project_id, notes, total  };
 
         const numberOfValues = Object.values(courseToUpdate).filter(Boolean).length
         if (numberOfValues === 0) {
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain either 'instructor_name', 'course_number', 'course_name', 'quarter', 'project_id', 'total'`
+                    message: `Request body must contain either 'instructor_name', 'program_area', 'course_number', 'course_name', 'quarter', 'project_id', 'total'`
                 }
             })
         }
