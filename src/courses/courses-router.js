@@ -48,7 +48,7 @@ coursesRouter
             }
         }
 
-        // newCourse.program_rep = req.user.id;
+        newCourse.program_rep = req.user.id;
         
         CoursesService.insertCourse(
             req.app.get('db'),
