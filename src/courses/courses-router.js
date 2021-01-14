@@ -31,9 +31,7 @@ coursesRouter
             })
             .catch(next)
     })
-    .post(
-        // requireAuth, 
-        jsonParser, (req, res, next) => {
+    .post(jsonParser, (req, res, next) => {
         const { instructor_name, course_number, course_name, 
                 quarter, project_id, total } = req.body;
         const newCourse = { instructor_name, course_number, 
